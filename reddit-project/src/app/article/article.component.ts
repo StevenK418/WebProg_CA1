@@ -8,12 +8,14 @@ import { Article } from './article.model';
 })
 export class ArticleComponent implements OnInit {
 
-  
+  /*
+    This causes a compile error as is unless 
+    "strictPropertyInitialization": false is added
+    to tsconfig.json.
+  */
   @Input() article:Article;
 
-  constructor() { 
-    //this.article = new Article('Angular', 'Http://angular.io', 10);
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
