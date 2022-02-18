@@ -19,4 +19,18 @@ export class Article{
     {
       this.votes--;
     }
+
+    domain(): string
+    {
+        try 
+        {
+            const link: string = this.link.split('//')[1];
+            return link.split('/')[0];
+        } 
+        catch (err) 
+        {
+            //Return Null caused compile error as not assignable to string, opted for empty string instead, differing from instructions
+            return '';
+        }
+    }
 }
